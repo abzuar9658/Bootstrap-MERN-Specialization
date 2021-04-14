@@ -70,9 +70,7 @@
             </li>
           </ul>
           <span class="navbar-text">
-            <a data-toggle="modal" data-target="#loginModal">
-              <span class="fa fa-sign-in"></span> Login</a
-            >
+            <a id="loginButton"> <span class="fa fa-sign-in"></span> Login</a>
           </span>
         </div>
       </div>
@@ -83,8 +81,8 @@
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title">Login</h4>
-            <button type="button" class="close" data-dismiss="modal">
-              &times;
+            <button type="button" class="close" id="closeLoginModalButton">
+              <span>&times;</span>
             </button>
           </div>
           <div class="modal-body">
@@ -141,8 +139,8 @@
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title">Reserve a Table</h4>
-            <button type="button" class="close" data-dismiss="modal">
-              &times;
+            <button type="button" class="close" id="closeReserveModalButton">
+              <span>&times;</span>
             </button>
           </div>
           <div class="modal-body">
@@ -291,8 +289,7 @@
             <a
               role="button"
               class="btn btn-block nav-link btn-warning"
-              data-toggle="modal"
-              data-target="#reserveTableModal"
+              id="reserveTableButton"
               >Reserve Table</a
             >
           </div>
@@ -549,6 +546,18 @@
           $("#carouselButton").children("span").removeClass("fa-play");
           $("#carouselButton").children("span").addClass("fa-pause");
         }
+      });
+      $("#loginButton").click(function () {
+        $("#loginModal").modal("show");
+      });
+      $("#reserveTableButton").click(function () {
+        $("#reserveTableModal").modal("show");
+      });
+      $("#closeLoginModalButton").click(function () {
+        $("#loginModal").modal("hide");
+      });
+      $("#closeReserveModalButton").click(function () {
+        $("#reserveTableModal").modal("hide");
       });
     </script>
   </body>
